@@ -1,0 +1,21 @@
+CARPETA DE FOTOS DE MICC
+========================
+
+Copiá tus fotos acá, con EXACTAMENTE estos nombres. Aparecen solas en la web
+(si estás con `npm run dev`, refrescá el navegador).
+
+  logo.png             Logo de MICC (PNG con fondo transparente)
+  hero.jpg             Foto principal de la portada (Danila y Claudio)
+  profesora.jpg        Foto de la Profe Danila
+  profesor.jpg         Foto del Profe Claudio
+  gimnasio-1.jpg       Instalaciones
+  gimnasio-2.jpg       Espacio de entrenamiento
+  musculacion.jpg      Actividad: Musculación
+  localizada.jpg       Actividad: Localizada
+  zumba.jpg            Actividad: Zumba
+  folklore.jpg         Actividad: Folklore
+  clases-grupales.jpg  Actividad: Clases grupales
+
+Consejos: usá fotos de buena calidad pero livianas (menos de 400 KB cada una
+si podés). Si tu foto tiene otro formato (.png, .webp), cambiá el nombre en
+src/config/images.js.

@@ -1,0 +1,538 @@
+/* ==========================================================================
+   Piezas reutilizables: logo, botones, fotos, encabezados, decoración
+   ========================================================================== */
+
+/* ---------- Logo ---------- */
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+}
+.logo__seal {
+  width: 2.1rem;
+  height: 2.1rem;
+  flex: none;
+}
+.logo__text {
+  display: flex;
+  flex-direction: column;
+  line-height: 0.9;
+}
+.logo__word {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-style: italic;
+  font-size: 2.1rem;
+  letter-spacing: -0.01em;
+  color: #fff;
+  text-shadow: 2px 2px 0 var(--slate);
+}
+.logo__tagline {
+  margin-top: 0.35rem;
+  font-family: var(--font-tech);
+  font-weight: 500;
+  font-size: 0.6rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--mist);
+}
+.logo--lg .logo__seal {
+  width: 3.4rem;
+  height: 3.4rem;
+}
+.logo--lg .logo__word {
+  font-size: 3.4rem;
+  text-shadow: 3px 3px 0 var(--slate);
+}
+.logo--image img {
+  height: 2.4rem;
+  width: auto;
+}
+.logo--lg.logo--image img {
+  height: 4rem;
+}
+
+/* ---------- Botones (paralelogramo deportivo) ---------- */
+.btn {
+  --skew: -10deg;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.8rem 1.6rem;
+  border: 2px solid var(--teal);
+  border-radius: 4px;
+  transform: skewX(var(--skew));
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-style: italic;
+  font-size: 1.25rem;
+  line-height: 1;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  transition: transform 0.25s var(--ease), background 0.25s, box-shadow 0.25s, color 0.25s;
+}
+.btn__inner {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  transform: skewX(calc(var(--skew) * -1));
+}
+.btn__icon {
+  width: 1.3em;
+  height: 1.3em;
+  flex: none;
+}
+.btn--primary {
+  background: var(--teal);
+  color: var(--ink);
+  box-shadow: 0 6px 22px -6px rgba(64, 172, 174, 0.65);
+}
+.btn--primary:hover {
+  background: var(--teal-soft);
+  border-color: var(--teal-soft);
+  transform: skewX(var(--skew)) translateY(-3px);
+  box-shadow: 0 12px 28px -8px rgba(64, 172, 174, 0.85);
+}
+.btn--ghost {
+  background: rgba(217, 223, 236, 0.06);
+  border-color: rgba(217, 223, 236, 0.55);
+  color: var(--ice);
+}
+.btn--ghost:hover {
+  background: rgba(64, 172, 174, 0.16);
+  border-color: var(--teal);
+  transform: skewX(var(--skew)) translateY(-3px);
+}
+.btn--sm {
+  padding: 0.6rem 1.15rem;
+  font-size: 1.05rem;
+}
+.btn--lg {
+  padding: 1rem 2rem;
+  font-size: 1.45rem;
+}
+.btn:active {
+  transform: skewX(var(--skew)) translateY(0);
+}
+
+/* ---------- Fotografías ---------- */
+.photo-slot {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(145deg, var(--deep), var(--navy) 60%, var(--ink));
+}
+.photo-slot > img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.photo-slot__placeholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  padding: 1rem;
+  text-align: center;
+  color: var(--mist);
+  background-image: radial-gradient(circle, rgba(64, 172, 174, 0.35) 1.3px, transparent 1.7px);
+  background-size: 15px 15px;
+}
+.photo-slot__icon {
+  width: 2.6rem;
+  height: 2.6rem;
+  color: var(--teal);
+  opacity: 0.9;
+}
+.photo-slot__label {
+  font-family: var(--font-tech);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+.photo-slot__file {
+  padding: 0.15rem 0.6rem;
+  border: 1px dashed rgba(64, 172, 174, 0.7);
+  border-radius: 999px;
+  font-family: var(--font-tech);
+  font-size: 0.78rem;
+  color: var(--ice);
+}
+.photo-slot__hint {
+  font-size: 0.95rem;
+  max-width: 22ch;
+}
+/* Versión chica para tarjetas: solo una etiqueta arriba a la derecha */
+.photo-slot.is-compact .photo-slot__placeholder {
+  align-items: flex-end;
+  justify-content: flex-start;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 0.9rem;
+}
+.photo-slot.is-compact .photo-slot__icon {
+  display: none;
+}
+.photo-slot.is-compact .photo-slot__label {
+  display: none;
+}
+.photo-slot.is-compact .photo-slot__file {
+  position: absolute;
+  top: 0.9rem;
+  right: 0.9rem;
+  font-size: 0.68rem;
+}
+
+/* ---------- Encabezados de sección ---------- */
+.section-head {
+  margin-bottom: clamp(2rem, 6vw, 3.5rem);
+  max-width: 44rem;
+}
+.section-head--center {
+  margin-inline: auto;
+  text-align: center;
+}
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin-bottom: 0.7rem;
+  font-family: var(--font-tech);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--teal);
+}
+.eyebrow::before {
+  content: '';
+  width: 2rem;
+  height: 2px;
+  background: var(--teal);
+  transform: skewX(-30deg);
+}
+.section-title {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-style: italic;
+  font-size: clamp(2.9rem, 11vw, 5rem);
+  line-height: 0.92;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  color: #fff;
+  text-shadow: 3px 3px 0 rgba(96, 98, 117, 0.75);
+}
+.section-lead {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  color: var(--mist);
+}
+
+/* ---------- Capas decorativas (baja intensidad) ---------- */
+.decor {
+  position: absolute;
+  pointer-events: none;
+}
+.decor-halftone {
+  width: min(70vw, 440px);
+  aspect-ratio: 1;
+  background-image: radial-gradient(circle, rgba(64, 172, 174, 0.6) 1.4px, transparent 1.9px);
+  background-size: 16px 16px;
+  opacity: 0.45;
+}
+.decor-halftone--tl {
+  top: 0;
+  left: 0;
+  -webkit-mask-image: radial-gradient(circle at 0 0, #000 0%, transparent 70%);
+  mask-image: radial-gradient(circle at 0 0, #000 0%, transparent 70%);
+}
+.decor-halftone--tr {
+  top: 0;
+  right: 0;
+  -webkit-mask-image: radial-gradient(circle at 100% 0, #000 0%, transparent 70%);
+  mask-image: radial-gradient(circle at 100% 0, #000 0%, transparent 70%);
+}
+.decor-halftone--bl {
+  bottom: 0;
+  left: 0;
+  -webkit-mask-image: radial-gradient(circle at 0 100%, #000 0%, transparent 70%);
+  mask-image: radial-gradient(circle at 0 100%, #000 0%, transparent 70%);
+}
+.decor-halftone--br {
+  bottom: 0;
+  right: 0;
+  -webkit-mask-image: radial-gradient(circle at 100% 100%, #000 0%, transparent 70%);
+  mask-image: radial-gradient(circle at 100% 100%, #000 0%, transparent 70%);
+}
+
+.decor-arcs {
+  width: clamp(110px, 24vw, 200px);
+  color: rgba(217, 223, 236, 0.5);
+}
+.decor-arcs--tl {
+  top: 0;
+  left: 0;
+}
+.decor-arcs--tr {
+  top: 0;
+  right: 0;
+  transform: scaleX(-1);
+}
+.decor-arcs--bl {
+  bottom: 0;
+  left: 0;
+  transform: scaleY(-1);
+}
+.decor-arcs--br {
+  bottom: 0;
+  right: 0;
+  transform: scale(-1);
+}
+
+.decor-ring {
+  width: clamp(280px, 70vw, 640px);
+  color: rgba(217, 223, 236, 0.13);
+  animation: ring-spin 90s linear infinite;
+}
+.decor-ring--r {
+  top: 50%;
+  right: -22%;
+  margin-top: calc(clamp(280px, 70vw, 640px) / -2);
+}
+.decor-ring--l {
+  top: 50%;
+  left: -26%;
+  margin-top: calc(clamp(280px, 70vw, 640px) / -2);
+}
+@keyframes ring-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ---------- Anillos blancos trazados a mano + foto circular ---------- */
+.ring-photo {
+  position: relative;
+  width: min(84vw, 440px);
+  aspect-ratio: 1;
+  margin-inline: auto;
+}
+.ring-photo__img {
+  position: absolute;
+  inset: 11%;
+  border-radius: 50%;
+  border: 3px solid rgba(217, 223, 236, 0.18);
+}
+.sketch-rings {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+  overflow: visible;
+}
+.sketch-rings ellipse {
+  fill: none;
+  stroke: #fff;
+  stroke-linecap: round;
+  stroke-dasharray: 1400;
+  stroke-dashoffset: 0;
+}
+.sketch-rings__a {
+  stroke-width: 2.6;
+}
+.sketch-rings__b {
+  stroke-width: 1.8;
+  opacity: 0.85;
+}
+.sketch-rings__c {
+  stroke-width: 1.2;
+  opacity: 0.6;
+}
+.reveal:not(.is-visible) .sketch-rings ellipse {
+  stroke-dashoffset: 1400;
+}
+.sketch-rings ellipse {
+  transition: stroke-dashoffset 1.8s var(--ease) 0.2s;
+}
+.sketch-rings__b {
+  transition-delay: 0.45s !important;
+}
+.sketch-rings__c {
+  transition-delay: 0.7s !important;
+}
+
+/* ---------- Botón flotante de WhatsApp ---------- */
+.fab {
+  position: fixed;
+  right: max(1rem, env(safe-area-inset-right));
+  bottom: max(1rem, env(safe-area-inset-bottom));
+  z-index: 40;
+  display: grid;
+  place-items: center;
+  width: 3.6rem;
+  height: 3.6rem;
+  border-radius: 50%;
+  background: var(--teal);
+  color: var(--ink);
+  box-shadow: 0 10px 28px -6px rgba(0, 0, 0, 0.6), 0 0 0 4px rgba(64, 172, 174, 0.25);
+  transition: transform 0.25s var(--ease), box-shadow 0.25s;
+}
+.fab svg {
+  width: 1.8rem;
+  height: 1.8rem;
+}
+.fab:hover {
+  transform: translateY(-4px) scale(1.05);
+}
+body.menu-open .fab {
+  display: none;
+}
+
+/* ---------- Header y menú móvil ---------- */
+.header {
+  position: fixed;
+  inset: 0 0 auto 0;
+  z-index: 60;
+  transition: background 0.3s, box-shadow 0.3s, backdrop-filter 0.3s;
+}
+.header.is-scrolled,
+.header.is-open {
+  background: rgba(8, 13, 35, 0.86);
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 1px 0 rgba(64, 172, 174, 0.28);
+}
+.header__bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  height: var(--header-h);
+}
+.header__nav,
+.header__cta {
+  display: none;
+}
+.header__toggle {
+  display: grid;
+  place-items: center;
+  width: 2.8rem;
+  height: 2.8rem;
+  border: 1.5px solid rgba(217, 223, 236, 0.4);
+  border-radius: 10px;
+  background: transparent;
+}
+.header__toggle svg {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.mobile-menu {
+  position: fixed;
+  inset: var(--header-h) 0 0 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 1.5rem var(--gutter) max(2rem, env(safe-area-inset-bottom));
+  overflow-y: auto;
+  background: radial-gradient(120% 70% at 80% 0%, var(--royal), var(--navy) 50%, var(--ink));
+}
+.mobile-menu[hidden] {
+  display: none;
+}
+.mobile-menu nav {
+  display: flex;
+  flex-direction: column;
+}
+.mobile-menu nav a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.9rem;
+  padding: 0.55rem 0;
+  border-bottom: 1px solid rgba(217, 223, 236, 0.12);
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-style: italic;
+  font-size: 2.3rem;
+  text-transform: uppercase;
+  line-height: 1.1;
+  animation: menu-in 0.5s var(--ease) both;
+  animation-delay: calc(var(--i) * 45ms);
+}
+.mobile-menu nav a.is-active {
+  color: var(--teal);
+}
+.mobile-menu__num {
+  font-family: var(--font-tech);
+  font-size: 0.75rem;
+  font-style: normal;
+  font-weight: 700;
+  color: var(--teal);
+  letter-spacing: 0.1em;
+}
+.mobile-menu__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+}
+@keyframes menu-in {
+  from {
+    opacity: 0;
+    transform: translateX(-14px);
+  }
+}
+
+@media (min-width: 1080px) {
+  .header__nav {
+    display: flex;
+    gap: 0.2rem;
+  }
+  .header__nav a {
+    position: relative;
+    padding: 0.5rem 0.75rem;
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-style: italic;
+    font-size: 1.1rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--mist);
+    transition: color 0.2s;
+  }
+  .header__nav a::after {
+    content: '';
+    position: absolute;
+    left: 0.75rem;
+    right: 0.75rem;
+    bottom: 0.1rem;
+    height: 2px;
+    background: var(--teal);
+    transform: scaleX(0) skewX(-30deg);
+    transform-origin: left;
+    transition: transform 0.3s var(--ease);
+  }
+  .header__nav a:hover,
+  .header__nav a.is-active {
+    color: #fff;
+  }
+  .header__nav a:hover::after,
+  .header__nav a.is-active::after {
+    transform: scaleX(1) skewX(-30deg);
+  }
+  .header__cta {
+    display: block;
+  }
+  .header__toggle,
+  .mobile-menu {
+    display: none !important;
+  }
+}

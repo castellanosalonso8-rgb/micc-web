@@ -1,0 +1,22 @@
+/* Paleta y medidas de MICC (extraídas del flyer). Cambiá los colores acá y se actualiza toda la web. */
+:root {
+  --navy: #0f1945; /* azul marino principal */
+  --ink: #080d23; /* azul casi negro */
+  --deep: #142465; /* azul profundo */
+  --royal: #1b2c86; /* azul vivo del centro del flyer (solo para degradados) */
+  --teal: #40acae; /* turquesa de acento */
+  --teal-soft: #6fd0d1;
+  --ice: #d9dfec; /* blanco frío */
+  --slate: #606275; /* gris azulado */
+  --mist: #a9b3d3; /* texto secundario legible sobre azul */
+
+  --font-display: 'Barlow Condensed', 'Arial Narrow', Impact, sans-serif;
+  --font-body: 'Rajdhani', system-ui, sans-serif;
+  --font-tech: 'Orbitron', 'Rajdhani', sans-serif;
+
+  --maxw: 1180px;
+  --gutter: clamp(1.1rem, 5vw, 2.5rem);
+  --header-h: 68px;
+  --radius: 18px;
+  --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+}
