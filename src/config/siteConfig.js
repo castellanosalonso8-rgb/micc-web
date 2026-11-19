@@ -85,60 +85,80 @@ const siteConfig = {
      5) PROFESORES
      ------------------------------------------------------------------------
      La foto de cada profe va en public/images/ (profesora.jpg y profesor.jpg). */
-  teachers: [
+   teachers: [
     {
       id: 'danila', // no cambiar: conecta con la foto en images.js
       name: 'Profe Danila',
-      description: 'Forma parte del equipo MICC, acompañando a cada persona en su entrenamiento con compromiso, dedicación y buena energía.',
+      description: 'Se enfoca en el seguimiento cercano y la técnica correcta de cada movimiento, ayudando a que cada alumno gane confianza, mejore su postura y disfrute del proceso paso a paso.',
     },
     {
       id: 'claudio', // no cambiar: conecta con la foto en images.js
       name: 'Profe Claudio',
-      description: 'Forma parte del equipo MICC, acompañando a cada persona en su entrenamiento con compromiso, dedicación y motivación. Promueve un ambiente donde la actividad física y el bienestar son protagonistas.',
+      description: 'Impulsa el rendimiento y la constancia en cada rutina, adaptando las cargas e intensidades para que puedas superarte día a día en un ambiente dinámico y motivador.',
     },
   ],
 
-  /* ------------------------------------------------------------------------
+ /* ------------------------------------------------------------------------
      6) ACTIVIDADES
      ------------------------------------------------------------------------
      Cambiá solo el texto de "description" de cada una. */
   activities: [
-    { id: 'musculacion', name: 'Musculación', description: 'Entrenamiento orientado al desarrollo de la fuerza, la resistencia y la masa muscular. Trabajá tu cuerpo, mejorá tu condición física y avanzá hacia tus objetivos a tu propio ritmo.'},
-    { id: 'localizada', name: 'Localizada', description: 'Ejercicios específicos para trabajar diferentes grupos musculares mediante rutinas dinámicas. Mejorá tu fuerza, resistencia y control corporal.' },
-    { id: 'zumba', name: 'Zumba', description: 'Una actividad que combina música, baile y ejercicio en clases llenas de energía. Movete, disfrutá de diferentes ritmos y mantenete activo mientras te divertís.' },
-    { id: 'folklore', name: 'Folklore', description: 'Un espacio para disfrutar de nuestras danzas tradicionales, aprender sus pasos y expresarse a través de la música y el movimiento. Cultura, ritmo y encuentro en cada clase.' },
-    { id: 'clases-grupales', name: 'Clases grupales', description: 'Entrenamientos compartidos en un ambiente dinámico y motivador. Disfrutá de la actividad física en grupo, compartí experiencias y encontrá motivación en cada encuentro.' },
+    {
+      id: 'musculacion',
+      name: 'Musculación',
+      description: 'Entrenamiento orientado al desarrollo de la fuerza, la resistencia y la masa muscular. Trabajá tu cuerpo, mejorá tu condición física y avanzá hacia tus objetivos a tu propio ritmo.',
+    },
+    {
+      id: 'ritmos',
+      name: 'Ritmos',
+      description: 'Una actividad que combina música, baile y ejercicio en clases llenas de energía. Movete, disfrutá de diferentes ritmos y mantenete activo mientras te divertís.',
+    },
+    {
+      id: 'amrap',
+      name: 'AMRAP',
+      description: 'Trabajamos en un tiempo previamente establecido una cantidad de rondas determinadas por los alumnos con una intensidad media-alta.',
+    },
+    {
+      id: 'hiit',
+      name: 'HIIT',
+      description: 'Actividad 100% cardio en donde ponemos mucho más énfasis en actividades más estáticas en poco tiempo y ritmo medio-alto.',
+    },
+    {
+      id: 'clases-grupales',
+      name: 'Clases grupales',
+      description: 'Entrenamientos compartidos en un ambiente dinámico y motivador. Disfrutá de la actividad física en grupo, compartí experiencias y encontrá motivación en cada encuentro.',
+    },
   ],
 
-  /* ------------------------------------------------------------------------
+/* ------------------------------------------------------------------------
      7) HORARIOS
      ------------------------------------------------------------------------
      Agregá una línea por cada clase o turno. Copiá este modelo (sin las //):
 
        { day: 'Lunes', time: '18:00 a 19:00', activity: 'Zumba', teacher: 'Profe Danila' },
 
-     - day: Lunes, Martes, Miércoles, Jueves, Viernes, Sábado o Domingo
-     - time: el horario como quieras mostrarlo
-     - activity: el nombre de la actividad
-     - teacher: quién la da (podés dejarlo vacío: '')
+- day: Lunes, Martes, Miércoles, Jueves, Viernes, Sábado o Domingo
+- time: el horario como quieras mostrarlo
+- activity: el nombre de la actividad
+- teacher: quién la da (podés dejarlo vacío: '')
 
      Se ordenan solos por día. Mientras la lista esté vacía, la web muestra
      el cuadro de horarios con el aviso "próximamente". */
   schedule: [
     // { day: 'Lunes', time: '[COMPLETAR]', activity: '[COMPLETAR]', teacher: '[COMPLETAR]' },
 
-  { day: 'Lunes', time: '19:30', activity: 'MICC', teacher: '' },
+    { day: 'Lunes', time: '19:30', activity: 'MICC', teacher: '' },
 
-  { day: 'Martes', time: '17:30', activity: 'MICC', teacher: '' },
-  { day: 'Martes', time: '18:30', activity: 'AMRAP', teacher: '' },
+    { day: 'Martes', time: '17:30', activity: 'MICC', teacher: '' },
+    { day: 'Martes', time: '18:30', activity: 'AMRAP', teacher: '' },
 
-  { day: 'Miércoles', time: '18:00', activity: 'RITMOS', teacher: '' },
-  { day: 'Miércoles', time: '19:00', activity: 'FIT BALL', teacher: '' },
+    { day: 'Miércoles', time: '18:00', activity: 'RITMOS', teacher: '' },
+    { day: 'Miércoles', time: '19:00', activity: 'MICC', teacher: '' },
 
-  { day: 'Jueves', time: '17:30', activity: 'MICC', teacher: '' },
-  { day: 'Jueves', time: '18:30', activity: 'HIIT', teacher: '' },
+    { day: 'Jueves', time: '17:30', activity: 'MICC', teacher: '' },
+    { day: 'Jueves', time: '18:30', activity: 'HIIT', teacher: '' },
 
-  { day: 'Viernes', time: '19:30', activity: 'MICC', teacher: '' },
+    { day: 'Viernes', time: '19:30', activity: 'MICC', teacher: '' },
 
   ],
 };
