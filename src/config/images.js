@@ -39,11 +39,11 @@ export const images = {
   ],
 
   // Actividades (la clave debe coincidir con el "id" de siteConfig.activities).
-  activities: {
+activities: {
     musculacion: photo('musculacion.jpg', 'Foto de musculación'),
-    localizada: photo('localizada.jpg', 'Foto de localizada'),
-    zumba: photo('zumba.jpg', 'Foto de zumba'),
-    folklore: photo('folklore.jpg', 'Foto de folklore'),
+    ritmos: photo('ritmos.jpg', 'Foto de ritmos'),
+    amrap: photo('amrap.jpg', 'Foto de AMRAP'),
+    hiit: photo('hiit.jpg', 'Foto de HIIT'),
     'clases-grupales': photo('clases-grupales.jpg', 'Foto de clases grupales'),
   },
 };
