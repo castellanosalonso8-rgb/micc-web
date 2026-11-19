@@ -147,18 +147,18 @@ const siteConfig = {
   schedule: [
     // { day: 'Lunes', time: '[COMPLETAR]', activity: '[COMPLETAR]', teacher: '[COMPLETAR]' },
 
-    { day: 'Lunes', time: '19:30', activity: 'MICC', teacher: '' },
+    { day: 'Lunes', time: '19:30', activity: 'MICC', teacher: 'CLAUDIO Y DANILA' },
 
-    { day: 'Martes', time: '17:30', activity: 'MICC', teacher: '' },
-    { day: 'Martes', time: '18:30', activity: 'AMRAP', teacher: '' },
+    { day: 'Martes', time: '17:30', activity: 'MICC', teacher: 'CLAUDIO Y DANILA' },
+    { day: 'Martes', time: '18:30', activity: 'AMRAP', teacher: 'DANILA' },
 
-    { day: 'Miércoles', time: '18:00', activity: 'RITMOS', teacher: '' },
-    { day: 'Miércoles', time: '19:00', activity: 'MICC', teacher: '' },
+    { day: 'Miércoles', time: '18:00', activity: 'RITMOS', teacher: 'DANILA' },
+    { day: 'Miércoles', time: '19:00', activity: 'MICC', teacher: 'CLAUDIO' },
 
-    { day: 'Jueves', time: '17:30', activity: 'MICC', teacher: '' },
-    { day: 'Jueves', time: '18:30', activity: 'HIIT', teacher: '' },
+    { day: 'Jueves', time: '17:30', activity: 'MICC', teacher: 'CLAUDIO Y DANILA' },
+    { day: 'Jueves', time: '18:30', activity: 'HIIT', teacher: 'CLAUDIO' },
 
-    { day: 'Viernes', time: '19:30', activity: 'MICC', teacher: '' },
+    { day: 'Viernes', time: '19:30', activity: 'MICC', teacher: 'CLAUDIO Y DANILA' },
 
   ],
 };
